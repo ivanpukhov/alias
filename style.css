@@ -1,0 +1,150 @@
+/* Основные настройки */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FAFAFA;
+    color: #333;
+}
+
+#game-container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+input[type="number"],
+button {
+    width: calc(100% - 40px);
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 50px;
+    border: 2px solid #007BFF;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus,
+button:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 123, 255, .5);
+}
+
+button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: transform 0.5s;
+    transform: scale(0);
+    border-radius: 50%;
+}
+
+button:hover:after {
+    transform: scale(3.5);
+}
+
+
+/* Игровые элементы */
+
+#timer-display,
+#word-display {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    transition: transform 0.5s ease;
+}
+
+#word-display {
+    font-size: 36px;
+    color: #007BFF;
+}
+
+
+/* Счет */
+
+#scoreboard div {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Адаптивный дизайн */
+
+@media (max-width: 768px) {
+    input[type="number"],
+    button {
+        padding: 15px;
+        font-size: 18px;
+    }
+}
+
+
+/* Анимации */
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.prepare-active {
+    animation: pulse 2s infinite;
+}
+
+
+/* Стиль для таймера подготовки */
+
+
+/* Стиль для таймера подготовки */
+
+#prep-timer {
+    font-size: 72px;
+    /* Увеличиваем размер шрифта */
+    color: #FF0000;
+    /* Красный цвет текста */
+    font-weight: bold;
+    margin: 20px 0;
+}
